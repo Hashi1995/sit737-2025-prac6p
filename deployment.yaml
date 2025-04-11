@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: testserver
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: testserver
@@ -13,7 +13,7 @@ spec:
         app: testserver
     spec:
       containers:
-      - name: testserver
-        image: hashinig/testserver
-        ports:
-        - containerPort: 3000
+        - name: testserver
+          image: hashinig/testserver:latest1
+          ports:
+            - containerPort: 3000
