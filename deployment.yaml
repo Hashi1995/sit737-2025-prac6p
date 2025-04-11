@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: testserver
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: testserver
+  template:
+    metadata:
+      labels:
+        app: testserver
+    spec:
+      containers:
+      - name: testserver
+        image: hashinig/testserver
+        ports:
+        - containerPort: 3000
